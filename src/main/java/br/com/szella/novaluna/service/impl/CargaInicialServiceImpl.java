@@ -31,133 +31,134 @@ public class CargaInicialServiceImpl implements CargaInicialService {
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(1)
+                        .desafios(of())
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(2)
                         .desafios(of(
-                                DesafioDto.builder().corAmarelo(4).build()
+                                DesafioDto.builder().amarelo(4).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(2)
                         .desafios(of(
-                                DesafioDto.builder().corAmarelo(4).build()
+                                DesafioDto.builder().amarelo(4).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corVermelho(1).corAzul(1).corAmarelo(1).build()
+                                DesafioDto.builder().vermelho(1).azul(1).amarelo(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corAmarelo(2).build()
+                                DesafioDto.builder().verde(1).amarelo(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corVermelho(1).corAzul(2).build()
+                                DesafioDto.builder().vermelho(1).azul(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corAmarelo(1).corVermelho(1).corAzul(1).build(),
-                                DesafioDto.builder().corAzul(3).build()
+                                DesafioDto.builder().verde(1).amarelo(1).vermelho(1).azul(1).build(),
+                                DesafioDto.builder().azul(3).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(4).build(),
-                                DesafioDto.builder().corVerde(2).build()
+                                DesafioDto.builder().verde(4).build(),
+                                DesafioDto.builder().verde(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corAmarelo(3).build(),
-                                DesafioDto.builder().corVermelho(1).corAzul(1).build()
+                                DesafioDto.builder().amarelo(3).build(),
+                                DesafioDto.builder().vermelho(1).azul(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corVermelho(1).build(),
-                                DesafioDto.builder().corAzul(1).corAmarelo(1).build()
+                                DesafioDto.builder().verde(1).vermelho(1).build(),
+                                DesafioDto.builder().azul(1).amarelo(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(3).build(),
-                                DesafioDto.builder().corVermelho(3).build(),
-                                DesafioDto.builder().corAzul(2).build()
+                                DesafioDto.builder().verde(3).build(),
+                                DesafioDto.builder().vermelho(3).build(),
+                                DesafioDto.builder().azul(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(5)
                         .desafios(of(
-                                DesafioDto.builder().corVermelho(2).build(),
-                                DesafioDto.builder().corAzul(2).build(),
-                                DesafioDto.builder().corAmarelo(2).build()
+                                DesafioDto.builder().vermelho(2).build(),
+                                DesafioDto.builder().azul(2).build(),
+                                DesafioDto.builder().amarelo(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(5)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(2).build(),
-                                DesafioDto.builder().corVermelho(1).build()
+                                DesafioDto.builder().verde(2).build(),
+                                DesafioDto.builder().vermelho(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(5)
                         .desafios(of(
-                                DesafioDto.builder().corVermelho(3).build(),
-                                DesafioDto.builder().corVermelho(1).build()
+                                DesafioDto.builder().vermelho(3).build(),
+                                DesafioDto.builder().vermelho(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(6)
                         .desafios(of(
-                                DesafioDto.builder().corAzul(3).build(),
-                                DesafioDto.builder().corVerde(1).corAzul(1).build(),
-                                DesafioDto.builder().corVerde(2).build()
+                                DesafioDto.builder().azul(3).build(),
+                                DesafioDto.builder().verde(1).azul(1).build(),
+                                DesafioDto.builder().verde(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(6)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(2).build(),
-                                DesafioDto.builder().corVermelho(2).build(),
-                                DesafioDto.builder().corAzul(1).build()
+                                DesafioDto.builder().verde(2).build(),
+                                DesafioDto.builder().vermelho(2).build(),
+                                DesafioDto.builder().azul(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AMARELO)
                         .passos(7)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corVermelho(1).build(),
-                                DesafioDto.builder().corVerde(1).corAzul(1).build(),
-                                DesafioDto.builder().corVermelho(1).corAzul(1).build()
+                                DesafioDto.builder().verde(1).vermelho(1).build(),
+                                DesafioDto.builder().verde(1).azul(1).build(),
+                                DesafioDto.builder().vermelho(1).azul(1).build()
                         ))
                         .build());
     }
@@ -167,133 +168,134 @@ public class CargaInicialServiceImpl implements CargaInicialService {
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(1)
+                        .desafios(of())
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(2)
                         .desafios(of(
-                                DesafioDto.builder().corAzul(4).build()
+                                DesafioDto.builder().azul(4).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(2)
                         .desafios(of(
-                                DesafioDto.builder().corAzul(4).build()
+                                DesafioDto.builder().azul(4).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corAzul(1).corAmarelo(1).build()
+                                DesafioDto.builder().verde(1).azul(1).amarelo(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corAmarelo(1).corVermelho(1).corAzul(1).build(),
-                                DesafioDto.builder().corVermelho(3).build()
+                                DesafioDto.builder().verde(1).amarelo(1).vermelho(1).azul(1).build(),
+                                DesafioDto.builder().vermelho(3).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corAmarelo(1).corAzul(2).build()
+                                DesafioDto.builder().amarelo(1).azul(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corVermelho(2).build()
+                                DesafioDto.builder().verde(1).vermelho(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corAmarelo(1).build(),
-                                DesafioDto.builder().corVermelho(1).corAzul(1).build()
+                                DesafioDto.builder().verde(1).amarelo(1).build(),
+                                DesafioDto.builder().vermelho(1).azul(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corAzul(3).build(),
-                                DesafioDto.builder().corVerde(1).corVermelho(1).build()
+                                DesafioDto.builder().azul(3).build(),
+                                DesafioDto.builder().verde(1).vermelho(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(3).build(),
-                                DesafioDto.builder().corVermelho(3).build(),
-                                DesafioDto.builder().corAmarelo(2).build()
+                                DesafioDto.builder().verde(3).build(),
+                                DesafioDto.builder().vermelho(3).build(),
+                                DesafioDto.builder().amarelo(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corVermelho(4).build(),
-                                DesafioDto.builder().corVermelho(2).build()
+                                DesafioDto.builder().vermelho(4).build(),
+                                DesafioDto.builder().vermelho(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(5)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(3).build(),
-                                DesafioDto.builder().corVerde(1).build()
+                                DesafioDto.builder().verde(3).build(),
+                                DesafioDto.builder().verde(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(5)
                         .desafios(of(
-                                DesafioDto.builder().corAmarelo(2).build(),
-                                DesafioDto.builder().corVerde(1).build()
+                                DesafioDto.builder().amarelo(2).build(),
+                                DesafioDto.builder().verde(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(5)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(2).build(),
-                                DesafioDto.builder().corAzul(2).build(),
-                                DesafioDto.builder().corAmarelo(2).build()
+                                DesafioDto.builder().verde(2).build(),
+                                DesafioDto.builder().azul(2).build(),
+                                DesafioDto.builder().amarelo(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(6)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(2).build(),
-                                DesafioDto.builder().corVermelho(2).build(),
-                                DesafioDto.builder().corAmarelo(1).build()
+                                DesafioDto.builder().verde(2).build(),
+                                DesafioDto.builder().vermelho(2).build(),
+                                DesafioDto.builder().amarelo(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(6)
                         .desafios(of(
-                                DesafioDto.builder().corAmarelo(3).build(),
-                                DesafioDto.builder().corVermelho(1).corAmarelo(1).build(),
-                                DesafioDto.builder().corVermelho(2).build()
+                                DesafioDto.builder().amarelo(3).build(),
+                                DesafioDto.builder().vermelho(1).amarelo(1).build(),
+                                DesafioDto.builder().vermelho(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.AZUL)
                         .passos(7)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corVermelho(1).build(),
-                                DesafioDto.builder().corVerde(1).corAmarelo(1).build(),
-                                DesafioDto.builder().corVermelho(1).corAmarelo(1).build()
+                                DesafioDto.builder().verde(1).vermelho(1).build(),
+                                DesafioDto.builder().verde(1).amarelo(1).build(),
+                                DesafioDto.builder().vermelho(1).amarelo(1).build()
                         ))
                         .build());
     }
@@ -303,133 +305,134 @@ public class CargaInicialServiceImpl implements CargaInicialService {
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(1)
+                        .desafios(of())
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(2)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(4).build()
+                                DesafioDto.builder().verde(4).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(2)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(4).build()
+                                DesafioDto.builder().verde(4).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corAmarelo(1).corVermelho(1).corAzul(1).build(),
-                                DesafioDto.builder().corAmarelo(3).build()
+                                DesafioDto.builder().verde(1).amarelo(1).vermelho(1).azul(1).build(),
+                                DesafioDto.builder().amarelo(3).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corAzul(1).corAmarelo(2).build()
+                                DesafioDto.builder().azul(1).amarelo(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corVermelho(1).corVerde(2).build()
+                                DesafioDto.builder().vermelho(1).verde(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corVermelho(1).corAmarelo(1).build()
+                                DesafioDto.builder().verde(1).vermelho(1).amarelo(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(3).build(),
-                                DesafioDto.builder().corAzul(1).corAmarelo(1).build()
+                                DesafioDto.builder().verde(3).build(),
+                                DesafioDto.builder().azul(1).amarelo(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corAmarelo(1).build(),
-                                DesafioDto.builder().corVermelho(1).corAzul(1).build()
+                                DesafioDto.builder().verde(1).amarelo(1).build(),
+                                DesafioDto.builder().vermelho(1).azul(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corAzul(4).build(),
-                                DesafioDto.builder().corAzul(2).build()
+                                DesafioDto.builder().azul(4).build(),
+                                DesafioDto.builder().azul(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corAzul(3).build(),
-                                DesafioDto.builder().corAmarelo(3).build(),
-                                DesafioDto.builder().corVermelho(2).build()
+                                DesafioDto.builder().azul(3).build(),
+                                DesafioDto.builder().amarelo(3).build(),
+                                DesafioDto.builder().vermelho(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(5)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(2).build(),
-                                DesafioDto.builder().corVermelho(2).build(),
-                                DesafioDto.builder().corAmarelo(2).build()
+                                DesafioDto.builder().verde(2).build(),
+                                DesafioDto.builder().vermelho(2).build(),
+                                DesafioDto.builder().amarelo(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(5)
                         .desafios(of(
-                                DesafioDto.builder().corVermelho(2).build(),
-                                DesafioDto.builder().corAzul(1).build()
+                                DesafioDto.builder().vermelho(2).build(),
+                                DesafioDto.builder().azul(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(5)
                         .desafios(of(
-                                DesafioDto.builder().corAmarelo(3).build(),
-                                DesafioDto.builder().corAmarelo(1).build()
+                                DesafioDto.builder().amarelo(3).build(),
+                                DesafioDto.builder().amarelo(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(6)
                         .desafios(of(
-                                DesafioDto.builder().corVermelho(3).build(),
-                                DesafioDto.builder().corVermelho(1).corAzul(1).build(),
-                                DesafioDto.builder().corAzul(2).build()
+                                DesafioDto.builder().vermelho(3).build(),
+                                DesafioDto.builder().vermelho(1).azul(1).build(),
+                                DesafioDto.builder().azul(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(6)
                         .desafios(of(
-                                DesafioDto.builder().corAzul(2).build(),
-                                DesafioDto.builder().corAmarelo(2).build(),
-                                DesafioDto.builder().corVermelho(1).build()
+                                DesafioDto.builder().azul(2).build(),
+                                DesafioDto.builder().amarelo(2).build(),
+                                DesafioDto.builder().vermelho(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERDE)
                         .passos(7)
                         .desafios(of(
-                                DesafioDto.builder().corVermelho(1).corAzul(1).build(),
-                                DesafioDto.builder().corVermelho(1).corAmarelo(1).build(),
-                                DesafioDto.builder().corAzul(1).corAmarelo(1).build()
+                                DesafioDto.builder().vermelho(1).azul(1).build(),
+                                DesafioDto.builder().vermelho(1).amarelo(1).build(),
+                                DesafioDto.builder().azul(1).amarelo(1).build()
                         ))
                         .build());
     }
@@ -439,133 +442,134 @@ public class CargaInicialServiceImpl implements CargaInicialService {
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(1)
+                        .desafios(of())
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(2)
                         .desafios(of(
-                                DesafioDto.builder().corVermelho(4).build()
+                                DesafioDto.builder().vermelho(4).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(2)
                         .desafios(of(
-                                DesafioDto.builder().corVermelho(4).build()
+                                DesafioDto.builder().vermelho(4).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corVermelho(1).corAzul(1).build()
+                                DesafioDto.builder().verde(1).vermelho(1).azul(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corAmarelo(1).corVerde(2).build()
+                                DesafioDto.builder().amarelo(1).verde(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corAzul(1).corVermelho(2).build()
+                                DesafioDto.builder().azul(1).vermelho(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(3)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corAmarelo(1).corVermelho(1).corAzul(1).build(),
-                                DesafioDto.builder().corVerde(3).build()
+                                DesafioDto.builder().verde(1).amarelo(1).vermelho(1).azul(1).build(),
+                                DesafioDto.builder().verde(3).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corVermelho(1).build(),
-                                DesafioDto.builder().corAzul(1).corAmarelo(1).build()
+                                DesafioDto.builder().verde(1).vermelho(1).build(),
+                                DesafioDto.builder().azul(1).amarelo(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corAzul(3).build(),
-                                DesafioDto.builder().corAmarelo(3).build(),
-                                DesafioDto.builder().corVerde(2).build()
+                                DesafioDto.builder().azul(3).build(),
+                                DesafioDto.builder().amarelo(3).build(),
+                                DesafioDto.builder().verde(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corVermelho(3).build(),
-                                DesafioDto.builder().corVerde(1).corAmarelo(1).build()
+                                DesafioDto.builder().vermelho(3).build(),
+                                DesafioDto.builder().verde(1).amarelo(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(4)
                         .desafios(of(
-                                DesafioDto.builder().corAmarelo(4).build(),
-                                DesafioDto.builder().corAmarelo(2).build()
+                                DesafioDto.builder().amarelo(4).build(),
+                                DesafioDto.builder().amarelo(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(5)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(2).build(),
-                                DesafioDto.builder().corVermelho(2).build(),
-                                DesafioDto.builder().corAzul(2).build()
+                                DesafioDto.builder().verde(2).build(),
+                                DesafioDto.builder().vermelho(2).build(),
+                                DesafioDto.builder().azul(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(5)
                         .desafios(of(
-                                DesafioDto.builder().corAzul(3).build(),
-                                DesafioDto.builder().corAzul(1).build()
+                                DesafioDto.builder().azul(3).build(),
+                                DesafioDto.builder().azul(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(5)
                         .desafios(of(
-                                DesafioDto.builder().corAzul(2).build(),
-                                DesafioDto.builder().corAmarelo(1).build()
+                                DesafioDto.builder().azul(2).build(),
+                                DesafioDto.builder().amarelo(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(6)
                         .desafios(of(
-                                DesafioDto.builder().corAzul(2).build(),
-                                DesafioDto.builder().corAmarelo(2).build(),
-                                DesafioDto.builder().corVerde(1).build()
+                                DesafioDto.builder().azul(2).build(),
+                                DesafioDto.builder().amarelo(2).build(),
+                                DesafioDto.builder().verde(1).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(6)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(3).build(),
-                                DesafioDto.builder().corVerde(1).corAmarelo(1).build(),
-                                DesafioDto.builder().corAmarelo(2).build()
+                                DesafioDto.builder().verde(3).build(),
+                                DesafioDto.builder().verde(1).amarelo(1).build(),
+                                DesafioDto.builder().amarelo(2).build()
                         ))
                         .build(),
                 PecaDto.builder()
                         .cor(CorPecaEnum.VERMELHO)
                         .passos(7)
                         .desafios(of(
-                                DesafioDto.builder().corVerde(1).corAzul(1).build(),
-                                DesafioDto.builder().corVerde(1).corAmarelo(1).build(),
-                                DesafioDto.builder().corAzul(1).corAmarelo(1).build()
+                                DesafioDto.builder().verde(1).azul(1).build(),
+                                DesafioDto.builder().verde(1).amarelo(1).build(),
+                                DesafioDto.builder().azul(1).amarelo(1).build()
                         ))
                         .build());
     }
