@@ -7,5 +7,9 @@ import java.util.List;
 
 public interface JogoService {
 
-    List<JogadorResponse> inserirJogado(JogadorRequest jogador);
+    void inserirJogador(JogadorRequest jogador);
+
+    List<JogadorResponse> todosJogadores();
+
+    void iniciarPartida();
 }

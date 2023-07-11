@@ -6,6 +6,7 @@ import br.com.szella.novaluna.service.JogoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,13 +21,30 @@ public class JogoController {
 
     private final JogoService jogoService;
 
-    @PostMapping("iniciar-jogador")
-    public ResponseEntity<List<JogadorResponse>> inserirJogado(@RequestBody JogadorRequest jogador) {
-        var jogadores = jogoService.inserirJogado(jogador);
+    @GetMapping("/jogadores")
+    public ResponseEntity<List<JogadorResponse>> todosJogadores() {
+        var jogadores = jogoService.todosJogadores();
 
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .body(jogadores);
+    }
+
+    @PostMapping("/iniciar-jogador")
+    public ResponseEntity<Void> inserirJogado(@RequestBody JogadorRequest jogador) {
+        jogoService.inserirJogador(jogador);
+
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .build();
+    }
+
+    @GetMapping("/iniciar-partida")
+    public ResponseEntity<String> iniciarPartida() {
+        jogoService.iniciarPartida();
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .build();
     }
 
 }
