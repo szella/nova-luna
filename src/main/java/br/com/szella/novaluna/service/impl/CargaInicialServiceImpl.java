@@ -2,11 +2,13 @@ package br.com.szella.novaluna.service.impl;
 
 import br.com.szella.novaluna.dto.DesafioDto;
 import br.com.szella.novaluna.dto.PecaDto;
+import br.com.szella.novaluna.dto.TabuleiroCasaDto;
 import br.com.szella.novaluna.enums.CorPecaEnum;
 import br.com.szella.novaluna.service.CargaInicialService;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static java.util.List.of;
@@ -23,7 +25,33 @@ public class CargaInicialServiceImpl implements CargaInicialService {
         pecas.addAll(iniciarPecasVerde());
         pecas.addAll(iniciarPecasVermelho());
 
+        embaralharPecas(pecas);
+        identificarPecas(pecas);
+
         return pecas;
+    }
+
+    @Override
+    public TabuleiroCasaDto[] carregarCasa() {
+        var casas = new TabuleiroCasaDto[24];
+        for (int i = 0; i < 24; i++) {
+            casas[i] = TabuleiroCasaDto.builder().build();
+        }
+
+        return casas;
+    }
+
+    private void embaralharPecas(ArrayList<PecaDto> pecas) {
+        for (int i = 1; i <= 5; i++) {
+            Collections.shuffle(pecas);
+        }
+    }
+
+    private void identificarPecas(ArrayList<PecaDto> pecas) {
+        var idPeca = 1;
+        for (PecaDto peca : pecas) {
+            peca.setId(idPeca++);
+        }
     }
 
     private List<PecaDto> iniciarPecasAmarelo() {

@@ -9,6 +9,7 @@ import java.util.List;
 @Data
 @Builder
 public class PecaDto {
+    private Integer id;
     private Integer passos;
     private CorPecaEnum cor;
     private List<DesafioDto> desafios;
