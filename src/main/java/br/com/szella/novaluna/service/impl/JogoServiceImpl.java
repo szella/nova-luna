@@ -2,11 +2,10 @@ package br.com.szella.novaluna.service.impl;
 
 import br.com.szella.novaluna.dto.JogadorDto;
 import br.com.szella.novaluna.dto.PecaDto;
+import br.com.szella.novaluna.dto.PosicaoDto;
 import br.com.szella.novaluna.dto.TabuleiroDto;
+import br.com.szella.novaluna.enums.CorJogadorEnum;
 import br.com.szella.novaluna.exception.JogoException;
-import br.com.szella.novaluna.mapper.JogadorMapper;
-import br.com.szella.novaluna.request.JogadorRequest;
-import br.com.szella.novaluna.response.JogadorResponse;
 import br.com.szella.novaluna.service.CargaInicialService;
 import br.com.szella.novaluna.service.JogoService;
 import lombok.RequiredArgsConstructor;
@@ -26,8 +25,9 @@ public class JogoServiceImpl implements JogoService {
     private List<PecaDto> pecas;
     private TabuleiroDto tabuleiro;
 
+
     @Override
-    public void inserirJogador(JogadorRequest jogador) {
+    public void inserirJogador(JogadorDto jogador) {
 
         if (null != this.tabuleiro) {
             throw new JogoException("Partida iniciada!");
@@ -37,32 +37,25 @@ public class JogoServiceImpl implements JogoService {
             jogadores = jogadores.stream()
                     .map(jogadorMap ->
                             jogadorMap.getCor().equals(jogador.getCor())
-                                    ? JogadorMapper.mapDto(jogador) : jogadorMap)
+                                    ? jogador : jogadorMap)
                     .collect(Collectors.toList());
         } else {
-            jogadores.add(JogadorMapper.mapDto(jogador));
+            jogadores.add(jogador);
         }
+
+        System.out.println("fim");
     }
 
     @Override
-    public List<JogadorResponse> todosJogadores() {
-        return JogadorMapper.mapResponseList(jogadores);
+    public List<JogadorDto> todosJogadores() {
+        return jogadores;
     }
 
     @Override
     public void iniciarPartida() {
         if (jogadores.size() == 0) {
             throw new JogoException("Registre um jogador!");
-        }
-
-        Collections.shuffle(jogadores);
-        iniciarTabuleiro();
-
-        System.out.println("ok");
-    }
-
-    public void iniciarTabuleiro() {
-        if (null != this.tabuleiro) {
+        } else if (null != this.tabuleiro) {
             throw new JogoException("Joga já foi iniciado!");
         }
 
@@ -74,14 +67,59 @@ public class JogoServiceImpl implements JogoService {
                 .casas(cargaInicialService.carregarCasa())
                 .build();
 
-        this.tabuleiro.getCasas()[0].setJogadores(jogadores);
+        Collections.shuffle(jogadores);
+
+        jogadores.forEach((a) -> {
+            this.tabuleiro.getCasas()[0].getJogadores().add(a);
+        });
 
         carregarPecasTabuleiro();
+
+        System.out.println("fim");
+    }
+
+    @Override
+    public void pegarPeca(CorJogadorEnum corJogador, int posicaoPeca, int posicaoX, int posicaoY) {
+        var peca = pegarPecaTabuleiro(posicaoPeca);
+        var jogador = pegarJogador(corJogador);
+        var posicao = PosicaoDto.builder().x(posicaoX).y(posicaoY).build();
+
+        jogador
+                .getPecas()
+                .put(posicao, peca);
+
+        this.tabuleiro
+                .setPosicaoLua(posicaoPeca);
+
+        this.tabuleiro
+                .getCasas()[jogador.getCasa()]
+                .getJogadores()
+                .removeIf(jogadorFilter -> jogadorFilter.getCor().equals(jogador.getCor()));
+
+        setNovaCasa(peca, jogador);
+
+        this.tabuleiro
+                .getCasas()[jogador.getCasa()]
+                .getJogadores()
+                .add(jogador);
+    }
+
+    @Override
+    public TabuleiroDto tabuleiro() {
+        return this.tabuleiro;
+    }
+
+    private void setNovaCasa(PecaDto peca, JogadorDto jogador) {
+        var soma = jogador.getCasa() + peca.getPassos();
+        var novaCasa = soma < 24 ? soma : soma - 24;
+
+        jogador.setCasa(novaCasa);
     }
 
     private void carregarPecasTabuleiro() {
         for (int i = 0; i < 12; i++) {
-            if (null == this.tabuleiro.getPecas()[i]) {
+            if (this.tabuleiro.getPosicaoLua() != i &&
+                    null == this.tabuleiro.getPecas()[i]) {
                 this.tabuleiro.getPecas()[i] = pegarPecaMonte();
             }
         }
@@ -95,5 +133,19 @@ public class JogoServiceImpl implements JogoService {
         var peca = this.pecas.get(0);
         this.pecas.remove(0);
         return peca;
+    }
+
+    private PecaDto pegarPecaTabuleiro(int posicaoPeca) {
+        var peca = this.tabuleiro.getPecas()[posicaoPeca];
+        this.tabuleiro.getPecas()[posicaoPeca] = null;
+
+        return peca;
+    }
+
+    private JogadorDto pegarJogador(CorJogadorEnum corJogador) {
+        return this.jogadores.stream()
+                .filter(jogadorFilter -> jogadorFilter.getCor().equals(corJogador))
+                .findFirst()
+                .orElseThrow(() -> new JogoException("Joga não localizado!"));
     }
 }

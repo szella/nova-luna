@@ -5,6 +5,7 @@ import br.com.szella.novaluna.request.JogadorRequest;
 import br.com.szella.novaluna.response.JogadorResponse;
 import lombok.experimental.UtilityClass;
 
+import java.util.HashMap;
 import java.util.List;
 
 @UtilityClass
@@ -14,6 +15,8 @@ public class JogadorMapper {
         return JogadorDto.builder()
                 .nome(jogador.getNome())
                 .cor(jogador.getCor())
+                .casa(0)
+                .pecas(new HashMap<>())
                 .build();
     }
 

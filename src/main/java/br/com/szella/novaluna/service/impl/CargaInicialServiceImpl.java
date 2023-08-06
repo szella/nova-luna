@@ -35,7 +35,9 @@ public class CargaInicialServiceImpl implements CargaInicialService {
     public TabuleiroCasaDto[] carregarCasa() {
         var casas = new TabuleiroCasaDto[24];
         for (int i = 0; i < 24; i++) {
-            casas[i] = TabuleiroCasaDto.builder().build();
+            casas[i] = TabuleiroCasaDto.builder()
+                    .jogadores(new ArrayList<>())
+                    .build();
         }
 
         return casas;
