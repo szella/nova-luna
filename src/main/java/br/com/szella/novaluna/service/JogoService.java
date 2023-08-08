@@ -17,4 +17,6 @@ public interface JogoService {
     void pegarPeca(CorJogadorEnum corJogador, int posicaoPeca, int posicaoX, int posicaoY);
 
     TabuleiroDto tabuleiro();
+
+    void carregarPecas();
 }

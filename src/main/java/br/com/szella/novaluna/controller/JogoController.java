@@ -37,7 +37,7 @@ public class JogoController {
     }
 
     @GetMapping("/tabuleiro")
-    public ResponseEntity<TabuleiroDto> tabuleiro(){
+    public ResponseEntity<TabuleiroDto> tabuleiro() {
         var tabuleiro = this.jogoService.tabuleiro();
 
         return ResponseEntity
@@ -69,6 +69,14 @@ public class JogoController {
             @PathVariable int posicaoX,
             @PathVariable int posicaoY) {
         jogoService.pegarPeca(corJogador, posicaoPeca, posicaoX, posicaoY);
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .build();
+    }
+
+    @GetMapping("/carregar-pecas")
+    public ResponseEntity<Void> carregarPecas() {
+        jogoService.carregarPecas();
         return ResponseEntity
                 .status(HttpStatus.OK)
                 .build();

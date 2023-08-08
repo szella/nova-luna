@@ -42,8 +42,6 @@ public class JogoServiceImpl implements JogoService {
         } else {
             jogadores.add(jogador);
         }
-
-        System.out.println("fim");
     }
 
     @Override
@@ -98,21 +96,23 @@ public class JogoServiceImpl implements JogoService {
 
         setNovaCasa(peca, jogador);
 
-        if (this.tabuleiro.getCasas()[this.tabuleiro.getUltimaPosicao()].getJogadores().isEmpty()) {
-            setUltimaPosicao();
-        }
-
         this.tabuleiro
                 .getCasas()[jogador.getCasa()]
                 .getJogadores()
                 .add(jogador);
 
+        setUltimaPosicao();
         setUltimoJogador();
     }
 
     @Override
     public TabuleiroDto tabuleiro() {
         return this.tabuleiro;
+    }
+
+    @Override
+    public void carregarPecas() {
+        carregarPecasTabuleiro();
     }
 
     private void setUltimaPosicao() {
@@ -146,12 +146,18 @@ public class JogoServiceImpl implements JogoService {
         return valor < 24 ? valor : valor - 24;
     }
 
-
     private void carregarPecasTabuleiro() {
-        for (int i = 0; i < 12; i++) {
-            if (this.tabuleiro.getPosicaoLua() != i &&
-                    null == this.tabuleiro.getPecas()[i]) {
-                this.tabuleiro.getPecas()[i] = pegarPecaMonte();
+        var posicaoPeca = this.tabuleiro.getPosicaoLua();
+        while (!this.pecas.isEmpty()) {
+            posicaoPeca++;
+            posicaoPeca = posicaoPeca < 12 ? posicaoPeca : 0;
+
+            if (this.tabuleiro.getPosicaoLua() == posicaoPeca) {
+                break;
+            }
+
+            if (null == this.tabuleiro.getPecas()[posicaoPeca]) {
+                this.tabuleiro.getPecas()[posicaoPeca] = pegarPecaMonte();
             }
         }
     }
