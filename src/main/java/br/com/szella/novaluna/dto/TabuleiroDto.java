@@ -8,6 +8,7 @@ import lombok.Data;
 public class TabuleiroDto {
     private Integer posicaoLua;
     private Integer ultimaPosicao;
+    private JogadorDto ultimojogador;
     private TabuleiroCasaDto[] casas;
     private PecaDto[] pecas;
 }

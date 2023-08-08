@@ -75,7 +75,7 @@ public class JogoServiceImpl implements JogoService {
 
         carregarPecasTabuleiro();
 
-        System.out.println("fim");
+        setUltimoJogador();
     }
 
     @Override
@@ -98,10 +98,16 @@ public class JogoServiceImpl implements JogoService {
 
         setNovaCasa(peca, jogador);
 
+        if (this.tabuleiro.getCasas()[this.tabuleiro.getUltimaPosicao()].getJogadores().isEmpty()) {
+            setUltimaPosicao();
+        }
+
         this.tabuleiro
                 .getCasas()[jogador.getCasa()]
                 .getJogadores()
                 .add(jogador);
+
+        setUltimoJogador();
     }
 
     @Override
@@ -109,12 +115,37 @@ public class JogoServiceImpl implements JogoService {
         return this.tabuleiro;
     }
 
+    private void setUltimaPosicao() {
+        var ultimaPosicao = this.tabuleiro.getUltimaPosicao();
+        while (true) {
+            if (!this.tabuleiro.getCasas()[ultimaPosicao].getJogadores().isEmpty()) {
+                this.tabuleiro.setUltimaPosicao(ultimaPosicao);
+
+                break;
+            }
+            ultimaPosicao = getCasaVoltaTabuleiro(++ultimaPosicao);
+        }
+    }
+
+    private void setUltimoJogador() {
+        var ultimaPosicao = this.tabuleiro.getUltimaPosicao();
+        var jogadores = this.tabuleiro.getCasas()[ultimaPosicao].getJogadores();
+        var ultimoJogador = jogadores.get(jogadores.size() - 1);
+
+        this.tabuleiro.setUltimojogador(ultimoJogador);
+    }
+
     private void setNovaCasa(PecaDto peca, JogadorDto jogador) {
         var soma = jogador.getCasa() + peca.getPassos();
-        var novaCasa = soma < 24 ? soma : soma - 24;
+        var novaCasa = getCasaVoltaTabuleiro(soma);
 
         jogador.setCasa(novaCasa);
     }
+
+    private static int getCasaVoltaTabuleiro(int valor) {
+        return valor < 24 ? valor : valor - 24;
+    }
+
 
     private void carregarPecasTabuleiro() {
         for (int i = 0; i < 12; i++) {
